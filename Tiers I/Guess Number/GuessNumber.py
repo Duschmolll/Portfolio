@@ -7,13 +7,13 @@ import random
 number = random.randint(0, 100)
 
 
-class Gui:
+class Game:
     def __init__(self) -> None:
         self.root = tk.Tk()
         self.root.geometry("800x500")
         self.root.title("Guess The Number")
         self.mainTitle = tk.Label(
-            self.root, text="Guess The Number", font=("Arial", 19)
+            self.root, text="Guess The Number 0-100", font=("Arial", 19)
         )
         # Checking if the Textinput is a number only
         numberValid = (self.root.register(self.checkEntryNb), "%P")
@@ -61,7 +61,5 @@ class Gui:
         self.entry.delete(0, tk.END)
 
 
-GNGui = Gui()
-GNGui.test = tk.Label(GNGui.root, text="Test", font=("Arial", 19))
-GNGui.test.pack(padx=20, pady=20)
+GNGui = Game()
 GNGui.root.mainloop()
