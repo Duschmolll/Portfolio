@@ -1,15 +1,39 @@
-import tkinter as tk
-from tkinter import _Cursor, _Relief, _ScreenUnits, _TakeFocusValue, Misc
-from typing import Any
-from typing_extensions import Literal
+import random
 
+n = True
+while n is True:
 
-class Score(tk.Frame):
-    def __init__(self) -> None:
-        pass
+    def checkInput():
+        match userChoise.lower():
+            case "rock":
+                if randomOuput == 1:
+                    print("You Lose ! Adversary chosed Paper !")
+                elif randomOuput == 2:
+                    print("You Win !  Adversary chosed Scissor !")
+                else:
+                    print("It's a Draw ! Adversary chosed Rock")
+            case "paper":
+                if randomOuput == 2:
+                    print("You Lose ! Adversary chosed Scissor !")
+                elif randomOuput == 1:
+                    print("You Win !  Adversary chosed Rock !")
+                else:
+                    print("It's a Draw ! Adversary chosed Paper")
+            case "scissor":
+                if randomOuput == 0:
+                    print("You Lose ! Adversary chosed Rock !")
+                elif randomOuput == 2:
+                    print("You Win !  Adversary chosed Paper !")
+                else:
+                    print("It's a Draw ! Adversary chosed Scissor")
+            case "quit":
+                global n
+                n = False
+            case other:
+                print("Invalid Input")
 
-
-class MainGui(tk.Frame):
-    def __init__(self, parent, *args, **kwargs):
-        tk.Frame.__init__(self, parent, *args, **kwargs)
-        self.parent = parent
+    print("Rock, Paper or Scissor ?")
+    userChoise = input()
+    randomOutputChoice = ["Rock", "Paper", "Scissor"]
+    randomOuput = random.randint(0, 2)
+    checkInput()
